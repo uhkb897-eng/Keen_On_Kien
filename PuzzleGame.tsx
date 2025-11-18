@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import puzzleImage from "@/assets/quiz-preview-large.png";
+import puzzleImage from "@/quiz-preview-large.png";
 
 interface PuzzleGameProps {
   onComplete: () => void;
