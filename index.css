@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 45 100% 70%;
+
+    --card: 220 13% 18%;
+    --card-foreground: 45 100% 70%;
+
+    --popover: 220 13% 18%;
+    --popover-foreground: 45 100% 70%;
+
+    --primary: 45 100% 51%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 220 13% 25%;
+    --secondary-foreground: 45 100% 70%;
+
+    --muted: 220 13% 25%;
+    --muted-foreground: 217 10% 64%;
+
+    --accent: 45 100% 51%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 13% 25%;
+    --input: 220 13% 25%;
+    --ring: 45 100% 51%;
+
+    --radius: 0.75rem;
+    
+    --code-bg: 220 13% 18%;
+    --code-border: 220 13% 25%;
+    --success: 142 76% 36%;
+    --celebration: 168 76% 42%;
+    
+    --gradient-golden: linear-gradient(135deg, hsl(45 100% 51%), hsl(38 100% 60%));
+    --shadow-glow: 0 0 40px hsl(45 100% 51% / 0.3);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 45 100% 70%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .glitch-effect {
+    animation: glitch 0.3s ease-in-out;
+  }
+  
+  @keyframes glitch {
+    0%, 100% {
+      transform: translate(0);
+      filter: none;
+    }
+    10% {
+      transform: translate(-5px, 2px);
+      filter: hue-rotate(90deg);
+    }
+    20% {
+      transform: translate(3px, -4px);
+      filter: hue-rotate(-90deg) contrast(1.5);
+    }
+    30% {
+      transform: translate(-2px, 3px);
+      filter: saturate(3);
+    }
+    40% {
+      transform: translate(4px, -2px);
+      filter: invert(0.8);
+    }
+    50% {
+      transform: translate(-3px, 4px);
+      filter: hue-rotate(180deg);
+    }
+    60% {
+      transform: translate(2px, -3px);
+      filter: contrast(2);
+    }
+    70% {
+      transform: translate(-4px, 2px);
+      filter: saturate(0);
+    }
+    80% {
+      transform: translate(3px, 3px);
+      filter: hue-rotate(-180deg);
+    }
+    90% {
+      transform: translate(-2px, -2px);
+      filter: brightness(1.5);
+    }
+  }
+}
