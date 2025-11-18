@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Fireworks } from "@/components/Fireworks";
+import { Button } from "@/button";
+import { Input } from "@/input";
+import { Fireworks } from "@/Fireworks";
 
 interface QuizSectionProps {
   onComplete: () => void;
